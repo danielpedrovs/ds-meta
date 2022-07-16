@@ -2,9 +2,19 @@ package com.devsuperior.sdsdsmeta.entities;
 
 import java.time.LocalDate;
 
-public class Sale {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name= "tb_sales")
+public class Sale{
 	
-	private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
 	private String sellerName;
 	private Integer visited;
 	private Integer deals;
@@ -66,3 +76,4 @@ public class Sale {
 
 	
 }	
+
